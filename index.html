@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>christmas wishlist 📚</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,700&family=Caveat:wght@600&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --wall: #b8c9b0;
+    --case: #f3efe3;
+    --wood: #fffdf6;
+    --wood-dark: #ddd5c2;
+    --cream: #fdf3e1;
+    --ink: #2c3a5a;
+    --red: #c8423f;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 48px 16px;
+    font-family: Nunito, system-ui, sans-serif;
+    color: var(--ink);
+    background: var(--wall) radial-gradient(rgba(255,255,255,.3) 1.5px, transparent 1.5px) 0 0 / 20px 20px;
+  }
+  header { text-align: center; margin-bottom: 32px; }
+  h1 { font-family: Fraunces, Georgia, serif; font-style: italic; font-size: clamp(36px, 8vw, 56px); margin: 0; line-height: 1.05; }
+  .sub { font-family: Caveat, cursive; font-size: 26px; color: var(--red); margin: 8px 0 0; }
+
+  /* the bookcase */
+  .case {
+    max-width: 780px; margin: 0 auto;
+    background: var(--case);
+    border: 14px solid var(--wood);
+    border-bottom: 0;
+    border-radius: 10px 10px 0 0;
+    padding: 0 24px 8px;
+    box-shadow: inset 0 0 30px rgba(120,110,80,.18), 0 20px 40px rgba(40,60,40,.2);
+  }
+  .lights { display: flex; justify-content: space-between; padding: 10px 4px 0; }
+  .lights span { width: 10px; height: 10px; border-radius: 50%; background: var(--c); box-shadow: 0 0 10px 2px var(--c); animation: twinkle 2.4s ease-in-out infinite; }
+  .lights span:nth-child(4n+1) { --c: #ff6b6b; }
+  .lights span:nth-child(4n+2) { --c: #ffd166; animation-delay: -.6s; }
+  .lights span:nth-child(4n+3) { --c: #7bd389; animation-delay: -1.2s; }
+  .lights span:nth-child(4n+4) { --c: #74c0fc; animation-delay: -1.8s; }
+  @keyframes twinkle { 50% { opacity: .35; box-shadow: none; } }
+
+  h2 { font-family: Caveat, cursive; font-weight: 600; font-size: 28px; color: var(--red); margin: 22px 0 6px; }
+
+  /* a shelf: each item carries its own piece of plank, so wrapped rows get their own shelf */
+  .shelf { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: flex-end; }
+  .shelf li { padding: 14px 3px 0; border-bottom: 14px solid var(--wood); box-shadow: 0 6px 0 var(--wood-dark); margin-bottom: 18px; }
+
+  /* book spines */
+  .book {
+    display: block;
+    width: 48px; height: var(--h, 220px);
+    padding: 12px 6px;
+    background: var(--c);
+    border-radius: 4px 4px 0 0;
+    writing-mode: vertical-rl;
+    box-shadow: inset 0 14px 0 rgba(255,255,255,.12), inset 0 -14px 0 rgba(0,0,0,.15), inset -4px 0 0 rgba(0,0,0,.18);
+    transition: transform .2s;
+  }
+  .book.dark { color: var(--cream); }
+  .book b { display: block; font-size: 14px; line-height: 1.2; }
+  .book small { display: block; font-size: 11px; opacity: .8; }
+  .shelf li:hover .book { transform: translateY(-12px); }
+
+  /* other wishes as objects on the shelf */
+  .thing { display: flex; flex-direction: column; align-items: center; width: 168px; text-align: center; }
+  .thing .tag {
+    background: #fff; color: var(--ink); box-shadow: 0 2px 6px rgba(0,0,0,.12);
+    font-family: Caveat, cursive; font-size: 21px; line-height: 1.1;
+    padding: 6px 10px; border-radius: 6px;
+    transform: rotate(-2deg); margin-bottom: 8px;
+  }
+  .shelf li:nth-child(even) .tag { transform: rotate(2deg); }
+  .thing .tag a { display: inline-block; margin-top: 4px; font: 700 13px Nunito, sans-serif; color: var(--cream); background: #c8423f; padding: 3px 10px; border-radius: 99px; text-decoration: none; }
+  .thing .obj { font-size: 52px; line-height: 1; transition: transform .2s; }
+  .shelf li:hover .obj { transform: translateY(-8px) rotate(-6deg); }
+
+  footer { text-align: center; font-family: Caveat, cursive; font-size: 24px; color: var(--ink); margin-top: 32px; }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>my christmas wishlist</h1>
+  <p class="sub">pull something off the shelf ✨</p>
+</header>
+
+<main class="case">
+  <div class="lights" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+  <h2>✨ these lovely things</h2>
+  <ul class="shelf">
+    <li class="thing"><span class="tag">new earpads for my crusty headphones<br>(or new headphones idk)</span><span class="obj">🎧</span></li>
+    <li class="thing"><span class="tag">a Decathlon gift voucher</span><span class="obj">🎟️</span></li>
+    <li class="thing"><span class="tag">a massage voucher</span><span class="obj">💆‍♀️</span></li>
+    <li class="thing"><span class="tag">Lethal Cosmetics Adventure Time eyeshadow palette<br><a href="https://lethalcosmetics.com/products/candy-kingdom-palette" target="_blank">see it ↗</a></span><span class="obj">🎨</span></li>
+    <li class="thing"><span class="tag">funky colorful eyeliner stamps<br><a href="https://www.glistencosmetics.com/collections/spectra-pen-collection" target="_blank">see it ↗</a></span><span class="obj">🌈</span></li>
+    <li class="thing"><span class="tag">cozy pyjamas</span><span class="obj">🧸</span></li>
+    <li class="thing"><span class="tag">a cute coffee mug</span><span class="obj">☕</span></li>
+    <li class="thing"><span class="tag">this funky jacket<br><a href="https://www.zalando.cz/naoko-kurtka-dwustronna-peachy-bloom-xs-mezisezonni-bunda-light-pink-nak21u0en-j11.html" target="_blank">see it ↗</a></span><span class="obj">🧥</span></li>
+  </ul>
+
+  <h2>📚 &amp; any of these books</h2>
+  <!-- add a book: copy one <li> line. --c = colour, --h = height -->
+  <ul class="shelf">
+    <li><span class="book dark" style="--c:#9b3d3d; --h:226px"><b>The Lamb</b><small>Lucy Rose</small></span></li>
+    <li><span class="book" style="--c:#d98fa0; --h:206px"><b>She's a Doll</b><small>Barbara Truelove</small></span></li>
+    <li><span class="book dark" style="--c:#5c7a4f; --h:236px"><b>Sweetbitter Song</b><small>Rose Hewlett</small></span></li>
+    <li><span class="book" style="--c:#c89b3c; --h:214px"><b>Circe</b><small>Madeline Miller</small></span></li>
+    <li><span class="book dark" style="--c:#6b5a8e; --h:196px"><b>Fallow</b><small>Sarah Anderson</small></span></li>
+    <li><span class="book dark" style="--c:#2f6e7a; --h:240px"><b>Our Wives Under the Sea</b><small>Julia Armfield</small></span></li>
+    <li><span class="book dark" style="--c:#b5562b; --h:232px"><b>Chain-Gang All-Stars</b><small>Nana Kwame Adjei-Brenyah</small></span></li>
+    <li><span class="book" style="--c:#d4774a; --h:210px"><b>Sunburn</b><small>Chloe Michelle Howarth</small></span></li>
+    <li><span class="book dark" style="--c:#3d5a80; --h:238px"><b>Burn Down Master's House</b><small>Clay Cane</small></span></li>
+    <li><span class="book" style="--c:#e09bb5; --h:204px"><b>Girl's Girl</b><small>Sonia Fieldman</small></span></li>
+    <li><span class="book dark" style="--c:#7a4e8c; --h:236px"><b>Public Access Afterworld</b><small>Jane Schoenbrun</small></span></li>
+    <li><span class="book dark" style="--c:#4f8a6e; --h:250px"><b>As You Wake, Break the Shell</b><small>Becky Chambers</small></span></li>
+    <li><span class="book" style="--c:#8fa9c4; --h:212px"><b>Our Cut of Salt</b><small>Deena Helm</small></span></li>
+    <li><span class="book dark" style="--c:#a8433a; --h:224px"><b>Hijab Butch Blues</b><small>Lamya H</small></span></li>
+    <li><span class="book" style="--c:#e3a8a1; --h:208px"><b>Trad Wife</b><small>Saratoga Schaefer</small></span></li>
+    <li><span class="book dark" style="--c:#4a4e69; --h:234px"><b>Metal from Heaven</b><small>August Clarke</small></span></li>
+    <li><span class="book" style="--c:#f2b880; --h:198px"><b>Fawn</b><small>C. N. Vair</small></span></li>
+    <li><span class="book dark" style="--c:#9d2235; --h:222px"><b>Ravenous</b><small>Sara Cooper</small></span></li>
+    <li><span class="book" style="--c:#6fa8dc; --h:214px"><b>Sky Daddy</b><small>Kate Folk</small></span></li>
+    <li><span class="book" style="--c:#d6a2e8; --h:246px"><b>Patricia Wants to Cuddle</b><small>Samantha Allen</small></span></li>
+    <li><span class="book" style="--c:#c9783a; --h:220px"><b>Death Valley</b><small>Melissa Broder</small></span></li>
+    <li><span class="book" style="--c:#e85d75; --h:206px"><b>Dykette</b><small>Jenny Fran Davis</small></span></li>
+    <li><span class="book dark" style="--c:#5e8c61; --h:226px"><b>A Good Person</b><small>Kirsten King</small></span></li>
+    <li><span class="book" style="--c:#f4c2c2; --h:212px"><b>She's a Lamb</b><small>Meredith Hambrock</small></span></li>
+    <li><span class="book dark" style="--c:#2e4057; --h:242px"><b>The Starving Saints</b><small>Caitlin Starling</small></span></li>
+    <li><span class="book dark" style="--c:#c75146; --h:218px"><b>Mother Thing</b><small>Ainslie Hogarth</small></span></li>
+  </ul>
+</main>
+
+<footer>thank you, you're the best 💝</footer>
+
+</body>
+</html>
